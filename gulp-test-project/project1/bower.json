@@ -1,0 +1,22 @@
+{
+  "name": "gulp-test",
+  "description": "Test Project for gulp",
+  "main": "index.html",
+  "authors": [
+    "Schmalte"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "gulp",
+    "test"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
