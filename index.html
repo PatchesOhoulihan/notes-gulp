@@ -42,5 +42,27 @@
   <h2>The gulpfile</h2>
   <p>The needs the name gulpfile.js</p>
   <h3>Anathomy of a gulpfile</h3>
+  <h2>Gulp default Task</h2>
+  <p>The default task is executed when you only type <code>gulp</code> in the cli</p>
+  <h2>Chaining tasks together</h2>
+  <p>For that use: <br> <code>gulp.task('taskname', ['taskname1','taskname2',..])</code></p>
+  <h2>Plugin: Gulp changed</h2>
+  <p> Plugin That checks if a file has changed before it process it, saves alot of time. Get it <a href="https://github.com/sindresorhus/gulp-changed#api">here.</a></p>
+  <p>Install the plugin by using <br> <code>sudo npm install --save-dev gulp-changed</code></p>
+  <p>Example: <br> <code>gulp.task('changed', function(){<br>&nbsp;&nbsp;&nbsp; return gulp.src(SRC)<br>&nbsp;&nbsp;&nbsp;.pipe(changed(DEST)) <br><br>&nbsp;&nbsp;&nbsp;.pipe(yourTask) <br>&nbsp;&nbsp;&nbsp;.pipe(gulp.dest(DEST) <br>);
+  });</code></p>
+<p>Note: .pipe(changed(DEST)) is needed to be able to compare the current files with the destination files.</p>
+<p>Changed is really helpful in combination with the Watchtask.</p>
+ <h2>Using the Watch Task</h2>
+ <p>Watch files and do something when a file changes. This always returns an EventEmitter that emits change events.</p>
+<h2>Plugin: Gulp plumber</h2>
+<p>Briefly it replaces pipe method and removes standard onerror handler on error event, which unpipes streams on error by default.</p>
+<p>How to install: <code>npm install --save-dev gulp-plumber</code></p>
+<h2>Task Dependencies</h2>
+<p>Simply enhanced the already known <code>gulp.task(..)</code> Method by a additional parameter. <br> Example: <code>gulp.task('Taskname',<mark>['dependency1','dependency2',....]</mark> function(){});</code></p>
+<h2>Plugin: gulp-imagemin</h2>
+<p>Minify PNG, JPEG, GIF and SVG images with imagemin. Get it <a href="https://github.com/sindresorhus/gulp-imagemin">here.</a></p>
+<p>Install: <code>npm install --save-dev gulp-imagemin</code></p>
+
 </body>
 </html>
