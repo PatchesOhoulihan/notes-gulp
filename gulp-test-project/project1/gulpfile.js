@@ -5,6 +5,8 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var changed = require('gulp-changed');
 var plumber = require('gulp-plumber');
+var imagemin = require('gulp-imagemin');
+var cleanCSS = require('gulp-clean-css');
 
 //* Wildcard for checking all .js files in the folder.
 var SRC = 'js/*.js';
@@ -29,4 +31,16 @@ gulp.task('jshint', function(){
 gulp.task('monitor', function(){
   console.log('found a change in a .js file: process file....')
   gulp.watch(SRC,['changed']);
+});
+
+gulp.task('compress-images', function(){
+    return gulp.src('img/*')
+    .pipe(imagemin({optimizationLevel: 7}))
+    .pipe(gulp.dest(DEST+'/img'));
+});
+
+gulp.task('minify-css', function(){
+    return gulp.src('css/*')
+    .pipe(cleanCSS())
+    .pipe(gulp.dest(DEST + '/css'));
 });
