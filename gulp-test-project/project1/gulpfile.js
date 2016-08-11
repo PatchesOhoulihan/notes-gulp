@@ -7,6 +7,9 @@ var changed = require('gulp-changed');
 var plumber = require('gulp-plumber');
 var imagemin = require('gulp-imagemin');
 var cleanCSS = require('gulp-clean-css');
+var uglify = require('gulp-uglify');
+var less = require('gulp-less');
+var concat = require('gulp-concat');
 
 //* Wildcard for checking all .js files in the folder.
 var SRC = 'js/*.js';
@@ -44,3 +47,19 @@ gulp.task('minify-css', function(){
     .pipe(cleanCSS())
     .pipe(gulp.dest(DEST + '/css'));
 });
+
+gulp.task('minify-js', function(){
+   return gulp.src(SRC)
+   .pipe(uglify())
+   .pipe(gulp.dest(DEST + '/js'));
+});
+
+gulp.task('less', function(){
+   gulp.src('less/*')
+   .pipe(less()}))
+   .pipe(gulp.dest(DEST + '/css2'))
+});
+
+
+
+
