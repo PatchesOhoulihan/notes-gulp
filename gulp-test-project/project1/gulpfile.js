@@ -10,10 +10,38 @@ var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var less = require('gulp-less');
 var concat = require('gulp-concat');
+var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
+var babel = require('gulp-babel');
 
 //* Wildcard for checking all .js files in the folder.
+var src = {
+    scss: 'fix',
+    css:  'fix',
+    html: 'fix'
+};
+
 var SRC = 'js/*.js';
 var DEST = 'dist';
+
+gulp.task('serve', ['less'], function(){
+    browserSync.init({
+       server:{
+           baseDir: './'
+       }  
+    });
+    gulp.watch("./less/*.less",['less'])
+    gulp.watch("*.html").on('change', reload);
+    gulp.watch("./js/*.js",['jshint']).on('change', reload);
+});
+
+gulp.task('babel', function(){
+    gulp.src('./js/*.js')
+    .pipe(babel({
+        presets: ['es2015']
+    }))
+    .pipe(gulp.dest('js2/babel.js'));
+});
 
 gulp.task('changed', function(){
   return gulp.src(SRC)
@@ -56,8 +84,11 @@ gulp.task('minify-js', function(){
 
 gulp.task('less', function(){
    gulp.src('less/*')
-   .pipe(less()}))
-   .pipe(gulp.dest(DEST + '/css2'))
+   .pipe(less())
+   .pipe(concat('master.css'))
+   .pipe(gulp.dest(DEST + '/css'))
+   .pipe(gulp.dest('css'))
+   .pipe(browserSync.stream());
 });
 
 

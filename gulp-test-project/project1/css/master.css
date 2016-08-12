@@ -1,56 +1,46 @@
-*{
-    margin: 0;
-    padding: 0;
+/*------------------------------------------------------------------------------------------------
+// Content
+------------------------------------------------------------------------------------------------*/
+.vip-wrapper {
+  overflow: hidden;
+}
+.hidden {
+  display: none;
+}
+p {
+  background: blue;
 }
 
-.clearfix{
-    clear:both;
+
+/*------------------------------------------------------------------------------------------------
+// Globals
+------------------------------------------------------------------------------------------------*/
+img {
+  width: 300px;
+  height: 300px;
+  float: left;
 }
 
 
 
+/*------------------------------------------------------------------------------------------------
+// Content
+------------------------------------------------------------------------------------------------*/
+.vip-wrapper {
+  overflow: hidden;
+}
+.hidden {
+  display: none;
+}
+p {
+  background: blue;
+}
+/*------------------------------------------------------------------------------------------------
+// Globals
+------------------------------------------------------------------------------------------------*/
+img {
+  width: 300px;
+  height: 300px;
+  float: left;
+}
 
-/*
-Orientierung für den Bildschirm(Querformat)
-@media screen and (orientation: landscape){
-    #container{
-        background-color: #fff;
-    }
-};*/
-
-/*
-Orientierung für den Bildschirm(Hochformat)
-@media screen and (orientation: portrait){
-    #container{
-        background-color: #fff;
-    }
-};
-*/
-/*
-Kombinationen mit verschieden Attributen möglich.
-@media screen and (max-width: 320px) and(orientation: portrait){
-    #container{
-        background-color: #fff;
-    }
-};
-*/
-/*
-
-Alternative kann man auch die device-width verändern. Für Praxis nicht relevant.
-
-@media screen and (max-device-width: 320px){
-    #container{
-        background-color: #fff;
-    }
-};*/
-
-
-/*
-
-Wenn width aktion genau bei 320px;
-
-@media screen and (width: 320px){
-    #container{
-        background-color: #fff;
-    }
-};*/
